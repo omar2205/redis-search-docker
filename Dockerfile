@@ -1,4 +1,4 @@
-FROM redislabs/redisearch:latest
+FROM redis/redis-stack:latest
 
 ARG REDISPASSWORD
 ARG REDISHOST
@@ -7,3 +7,5 @@ ARG REDISPORT
 ARG REDISUSER
 
 EXPOSE $PORT
+
+CMD ["redis-server" "--port $PORT" "--protected-mode" "no" "--loadmodule" "/usr/lib/redis/modules/redisearch.so" "--loadmodule" "/usr/lib/redis/modules/rejson.so"]
