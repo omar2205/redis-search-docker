@@ -17,4 +17,4 @@ EXPOSE $PORT
 # https://transfer.sh/zBlW2b/redisearch.so
 # https://transfer.sh/A1HOeQ/rejson.so
 
-CMD ["sh", "-c", "redis-server", "--bind", "0.0.0.0", "--port", "$PORT", "--protected-mode", "no", "--loadmodule", "/usr/lib/redisearch.so", "--loadmodule", "/usr/lib/rejson.so"]
+CMD ["sh", "-c", "redis-server", "--requirepass", "$REDISPASSWORD", "--bind", "0.0.0.0", "--port", "$PORT", "--protected-mode", "no", "--loadmodule", "/usr/lib/redisearch.so", "--loadmodule", "/usr/lib/rejson.so"]
