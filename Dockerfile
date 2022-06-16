@@ -1,10 +1,13 @@
-FROM redis/redis-stack:latest
+# FROM redis/redis-stack:latest
+FROM alpine
 
 ARG REDISPASSWORD
 ARG REDISHOST
 ARG PORT
 ARG REDISPORT
 ARG REDISUSER
+
+RUN apk add redis
 
 EXPOSE $PORT
 
