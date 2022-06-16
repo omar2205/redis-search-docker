@@ -11,4 +11,4 @@ RUN apk add redis
 
 EXPOSE $PORT
 
-CMD ["redis-server", "--port", "$PORT", "--protected-mode", "no", "--loadmodule", "/usr/lib/redis/modules/redisearch.so", "--loadmodule", "/usr/lib/redis/modules/rejson.so"]
+CMD ["sh", "-c", "redis-server", "--port", "$PORT", "--protected-mode", "no", "--loadmodule", "/usr/lib/redis/modules/redisearch.so", "--loadmodule", "/usr/lib/redis/modules/rejson.so"]
